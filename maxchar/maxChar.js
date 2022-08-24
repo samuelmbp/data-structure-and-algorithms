@@ -13,7 +13,22 @@ const maxChar = (word) => {
 	 * 4. use object.keys and reduce to check the idx of each value
 	 * 5. return the most common string
 	 */
+	const chars = {};
 
+	for (const char of word) {
+		if (!chars[char]) chars[char] = 1;
+		else chars[char]++;
+	}
+
+	const mostCommonChar = Object.keys(chars).reduce((prev, curr) => {
+		if (chars[prev] > chars[curr]) {
+			return prev;
+		} else {
+			return curr;
+		}
+	});
+
+	return mostCommonChar;
 };
 
 maxChar('aabbcccc'); // c
