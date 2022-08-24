@@ -12,21 +12,19 @@ const palindrome = (string) => {
 	 * 1. create an empty variable reversed
 	 * 2. iterate over the original string and add each char in the reversed variable : z - a
 	 * 3. use an if statement to compare the reversed variable with the original string
-	 * 4. return true if these are the same
-	 * 5. false if these are not the same
+	 * 4. return true if these are equal
+	 * 5. false if these are not equal
 	 */
-	let reversed = '';
-	for (let char of string) {
-		reversed = char + reversed;
-	}
 
-	if (reversed === string) {
-		return true;
-	} else {
-		return false;
-	}
+	// Solution #1
+	// const reversed = string.split('').reverse().join('');
+
+	// Solution #2
+	const reversed = string.split('').reduce((prev, curr) => {
+		return curr + prev;
+	}, '');
+
+	return string === reversed ? true : false;
 };
-
-palindrome('written');
 
 module.exports = palindrome;
