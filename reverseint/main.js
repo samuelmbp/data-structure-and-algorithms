@@ -19,13 +19,11 @@ const reverseInt = (number) => {
 	const numberToStringReverse = number.toString().split('').reverse().join('');
 	// Solution #1
 	return parseInt(numberToStringReverse) * Math.sign(number);
-	
+
 	// Solution #2
 	// return number < 0
 	// 	? parseInt(numberToStringReverse) * -1
 	// 	: parseInt(numberToStringReverse);
 };
-
-console.log(reverseInt(-123));
 
 module.exports = reverseInt;
