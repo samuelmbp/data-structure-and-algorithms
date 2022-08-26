@@ -22,11 +22,11 @@ const chunk = (array, size) => {
 
 	for (let element of array) {
 		const lastElement = dimensionalArr[dimensionalArr.length - 1];
-		if (!lastElement || lastElement.length === size) {
-			dimensionalArr.push([element]);
-		} else {
-			lastElement.push(element);
-		}
+		
+		// Turnery Operator
+		!lastElement || lastElement.length === size
+			? dimensionalArr.push([element])
+			: lastElement.push(element);
 	}
 
 	return dimensionalArr;
