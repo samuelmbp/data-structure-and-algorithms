@@ -16,21 +16,9 @@ function anagrams(stringA, stringB) {
 	 * 4. check if the count of obj keys are not equal and return false
 	 * 5. iterate over one obj and compare each char to the other obj
 	 */
-	const wordOne = stringA.replace(/[^\w]/g, '').toLowerCase();
-	const wordTwo = stringB.replace(/[^\w]/g, '').toLowerCase();
 
-	const charsWordOne = {};
-	const charsWordTwo = {};
-
-	for (let char of wordOne) {
-		if (!charsWordOne[char]) charsWordOne[char] = 1;
-		else charsWordOne[char]++;
-	}
-
-	for (let char of wordTwo) {
-		if (!charsWordTwo[char]) charsWordTwo[char] = 1;
-		else charsWordTwo[char]++;
-	}
+	const charsWordOne = buildCharMap(stringA);
+	const charsWordTwo = buildCharMap(stringB);
 
 	if (Object.keys(charsWordOne).length !== Object.keys(charsWordTwo).length) {
 		return false;
@@ -40,6 +28,16 @@ function anagrams(stringA, stringB) {
 		return charsWordOne[char] === charsWordTwo[char];
 }
 
-console.log(anagrams('sam!!', 'ila'));
+const buildCharMap = (str) => {
+	const charMap = {};
 
+	for (let char of str.replace(/[^\w]/g, '').toLowerCase()) {
+		if (!charMap[char]) charMap[char] = 1;
+		else charMap[char]++;
+	}
+
+	return charMap;
+};
+
+buildCharMap('Sam!!dap');
 module.exports = anagrams;
