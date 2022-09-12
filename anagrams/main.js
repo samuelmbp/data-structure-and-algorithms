@@ -17,27 +17,34 @@ function anagrams(stringA, stringB) {
 	 * 5. iterate over one obj and compare each char to the other obj
 	 */
 
-	const charsWordOne = buildCharMap(stringA);
-	const charsWordTwo = buildCharMap(stringB);
+	// SOLUTION #1
+	// const charsWordOne = buildCharMap(stringA);
+	// const charsWordTwo = buildCharMap(stringB);
 
-	if (Object.keys(charsWordOne).length !== Object.keys(charsWordTwo).length) {
-		return false;
-	}
+	// if (Object.keys(charsWordOne).length !== Object.keys(charsWordTwo).length) {
+	// 	return false;
+	// }
 
-	for (let char in charsWordOne)
-		return charsWordOne[char] === charsWordTwo[char];
+	// for (let char in charsWordOne)
+	// 	return charsWordOne[char] === charsWordTwo[char];
+
+	// SOLUTION #2
+	return cleanString(stringA) === cleanString(stringB);
 }
 
-const buildCharMap = (str) => {
-	const charMap = {};
-
-	for (let char of str.replace(/[^\w]/g, '').toLowerCase()) {
-		if (!charMap[char]) charMap[char] = 1;
-		else charMap[char]++;
-	}
-
-	return charMap;
+const cleanString = (str) => {
+	return str.replace(/[^\w]/g, '').toLowerCase().split('').sort().join('');
 };
 
-buildCharMap('Sam!!dap');
+// const buildCharMap = (str) => {
+// 	const charMap = {};
+
+// 	for (let char of str.replace(/[^\w]/g, '').toLowerCase()) {
+// 		if (!charMap[char]) charMap[char] = 1;
+// 		else charMap[char]++;
+// 	}
+
+// 	return charMap;
+// };
+
 module.exports = anagrams;
