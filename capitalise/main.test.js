@@ -15,4 +15,8 @@ describe('#capitalise', () => {
 	test('should capitalise the first letter', () => {
 		expect(capitalise('i love breakfast')).toEqual('I Love Breakfast');
 	});
+
+	test('should capitalise only the first letter and the rest of the word should be lowercase', () => {
+		expect(capitalise('time fOr gYM')).toEqual('Time For Gym');
+	});
 });
