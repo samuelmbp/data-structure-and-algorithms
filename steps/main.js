@@ -22,17 +22,12 @@ const steps = (number) => {
 		let stair = '';
 
 		for (let column = 0; column < number; column++) {
-			if (column <= row) {
-				stair += '#';
-			} else {
-				stair += ' ';
-			}
+			column <= row ? (stair += '#') : (stair += ' ');
 		}
 
 		console.log(stair);
 	}
 };
-
-steps(20);
+steps(10);
 
 module.exports = steps;
