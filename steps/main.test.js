@@ -2,6 +2,13 @@
 const steps = require('./main');
 
 describe('#steps', () => {
+	beforeEach(() => {
+		jest.spyOn(console, 'log');
+	});
+
+	afterEach(() => {
+		console.log.mockRestore();
+	});
 	test('steps is a function', async () => {
 		expect(typeof steps).toEqual('function');
 	});
