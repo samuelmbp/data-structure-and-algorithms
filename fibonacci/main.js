@@ -9,13 +9,16 @@
 //   fib(4) === 3
 
 function fibonacci(number) {
-	const result = [0, 1];
+	/** ITERATIVE SOLUTION */
+	// const result = [0, 1];
+	// for (let n = 2; n <= number; n++) {
+	// 	result[n] = result[n - 2] + result[n - 1];
+	// }
+	// return result[result.length - 1];
 
-	for (let n = 2; n <= number; n++) {
-		result[n] = result[n - 2] + result[n - 1];
-	}
-
-	return result[result.length - 1];
+	/** RECURSIVE SOLUTION */
+	if (number < 2) return number;
+	return fibonacci(number - 2) + fibonacci(number - 1);
 }
 
 module.exports = fibonacci;
