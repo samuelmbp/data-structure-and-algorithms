@@ -23,13 +23,12 @@ const musicFilter = (soundWave, lowestValue, highestValue) => {
 	const modifiedSoundWave = [];
 
 	for (let frequency of soundWave) {
-		if (frequency > highestValue) {
+		if (frequency > highestValue) 
 			modifiedSoundWave.push(highestValue);
-		} else if (frequency < lowestValue) {
+		else if (frequency < lowestValue) 
 			modifiedSoundWave.push(lowestValue);
-		} else {
+		else 
 			modifiedSoundWave.push(frequency);
-		}
 	}
 
 	return modifiedSoundWave;
