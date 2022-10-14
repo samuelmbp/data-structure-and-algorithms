@@ -22,7 +22,7 @@ describe('#fibonacci', () => {
 		expect(fibonacci(4)).toBe(3);
 	});
 
-	test('should calculate correct fibonacci value for 2', () => {
+	test('should calculate correct fibonacci value for 39', () => {
 		expect(fibonacci(39)).toBe(63245986);
 	});
 });

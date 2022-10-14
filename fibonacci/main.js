@@ -9,14 +9,14 @@
 //   fib(4) === 3
 
 function fibonacci(number) {
-	/** ITERATIVE SOLUTION */
+	/** ITERATIVE SOLUTION O(n) -> Linear Runtime (Faster)*/
 	// const result = [0, 1];
 	// for (let n = 2; n <= number; n++) {
 	// 	result[n] = result[n - 2] + result[n - 1];
 	// }
 	// return result[result.length - 1];
 
-	/** RECURSIVE SOLUTION */
+	/** RECURSIVE SOLUTION O(2^n) -> Exponential Time (Slower)*/
 	if (number < 2) return number;
 	return fibonacci(number - 2) + fibonacci(number - 1);
 }
