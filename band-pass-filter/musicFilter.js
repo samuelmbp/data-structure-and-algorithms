@@ -35,6 +35,6 @@ const musicFilter = (soundWave, lowestValue, highestValue) => {
 	return modifiedSoundWave;
 };
 
-console.log(musicFilter([10, 20, 50], 10, 40));
+console.log(musicFilter([10, 20, 40], 15, 30)); // [15, 20, 30]
 
 module.exports = musicFilter;

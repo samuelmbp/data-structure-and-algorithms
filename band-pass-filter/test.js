@@ -13,4 +13,8 @@ describe('#musicFilter', () => {
 	test('should modify the lowest value in the sound wave array', () => {
 		expect(musicFilter([10, 20, 40], 20, 40)).toEqual([20, 20, 40]);
 	});
+
+	test('should modify both the lowest and the highest values in the sound wave array', () => {
+		expect(musicFilter([10, 20, 40], 15, 30)).toEqual([15, 20, 30]);
+	});
 });
