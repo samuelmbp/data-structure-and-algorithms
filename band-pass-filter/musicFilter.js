@@ -13,3 +13,9 @@
  * [10, 20, 40], 20, 40					 |		[20, 20, 40]
  * [10, 20, 40], 15, 30					 |		[15, 20, 30]
  */
+
+const musicFilter = (soundWave, lowestValue, highestValue) => {
+	return soundWave;
+};
+
+module.exports = musicFilter;
