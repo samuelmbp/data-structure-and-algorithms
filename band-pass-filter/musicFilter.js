@@ -17,6 +17,7 @@
 const musicFilter = (soundWave, lowestValue, highestValue) => {
 	/**
 	 * Check if the soundWave contains any value higher than the highest value and modify it
+	 * Check if the soundWave contains any values lower than the lowestValue amd modify it
 	 */
 
 	const modifiedSoundWave = [];
@@ -24,6 +25,8 @@ const musicFilter = (soundWave, lowestValue, highestValue) => {
 	for (let frequency of soundWave) {
 		if (frequency > highestValue) {
 			modifiedSoundWave.push(highestValue);
+		} else if (frequency < lowestValue) {
+			modifiedSoundWave.push(lowestValue);
 		} else {
 			modifiedSoundWave.push(frequency);
 		}
