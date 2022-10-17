@@ -23,4 +23,10 @@ describe('#musicFilter', () => {
 			15, 20, 30, 40, 90, 100,
 		]);
 	});
+
+	test('should apply default values when lowest and highest are not supplied ', () => {
+		expect(musicFilter([20, 35, 105, 900, 1200])).toEqual([
+			40, 40, 105, 900, 1000,
+		]);
+	});
 });
